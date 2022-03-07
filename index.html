@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../CSS/bootstrap.css">
+    <script src="../JS/jquery.min.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
+    <style>
+        body{
+            width: 100%;
+            height: auto;
+        }
+        #mau{
+            font-size: 17px;
+            color:black;
+        }
+        #mau:hover{
+            color: white;
+            background-color: black;
+        }
+        #icon3{
+            font-size: 22px;
+            color: rgb(0, 0, 0);
+            margin-top: 13px;
+            margin-right: 15px;
+        }
+        #icon3:hover{
+            color: red;
+        }
+        img{
+            margin-top: 20px;
+            width: 100%;
+            height: 100%;
+        }
+        #h{
+            font-size: 40px;
+        }
+        a{
+            color: #333333;
+        }
+        a:hover{
+            text-decoration: none;
+            color: #666666;
+        }
+        #icon{
+            font-size: 23px;
+            margin-top: 10px;
+            padding: 0 1%;
+        }
+        #icon:hover{
+           font-size: 30px;
+           padding: 0 2%;
+           text-shadow:3px 3px 4px #ffb3b3;
+        }
+        #nut1{
+            background-color:#1a1a1a; 
+            border: 1px solid #737373;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            padding: 7px 17px;
+            cursor: pointer;
+            font: inherit;
+            margin-left: 70%;   
+            margin-top: 20px; 
+        }
+        #nut1:hover{
+            color: white;
+            border: none;
+            border: 1px solid #737373;
+            background-color: black;
+        }
+        #canicon{
+            margin-top: 110px;
+        }
+        footer{
+            width: 100%;
+            background-color: #1a1a1a;
+            height: 400px;
+            margin-top: 840px;
+        }
+        .ftrai{
+            height: 200px;
+            margin-top: 70px;
+            text-align: center;
+        }
+        .ftrai h2{
+            color: white;
+            font-size: 60px;
+            margin: 0 45px;
+            border-bottom: 5px solid white;
+    
+            }
+        .ftrai h2:hover{
+        color: lightgray;
+        }
+        .fphai{
+             margin-top: 80px;
+        }
+        #p1:hover{
+             color: #737373;
+        }
+        #ab{
+            font-family: Calibri;
+            font-size: 15px;
+            color:darkgray
+        }
+        #r{
+            width: 100%;
+            height: 300px;
+            float: left;
+        }
+        #t{
+            height: 70%;
+        }
+        #d{
+            height: 30%;
+        }
+        #span1{
+            color: #737373;
+            width: 20%;
+            float: left;
+            font-size: 45px;
+            font-family: Book Antiqua;
+            margin-top: 10px;
+        }
+        #span2{
+            margin-top: 10px;
+            width: 80%;
+            float: left;
+            font-family: Cambria Math;
+            font-size: 14px;
+        }
+        #img1:hover{
+            opacity: 0.6;
+            filter: alpha(opacity=60);
+        }
+        
+    </style>
+    <script language="javascript">
+        function KiemTraDN() {
+            var tendangnhap = document.getElementById("txtTenDN").value;
+            var regular = /^[a-zA-Z][a-zA-Z0-9]{5,11}$/;
+            if (tendangnhap.length < 6) {
+                document.getElementById("LoiDN").innerHTML = "Username 6 - 12 characters starting with the letter character";
+            }
+            if (regular.test(tendangnhap) == true) {
+                document.getElementById("LoiDN").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("LoiDN").innerHTML = "Invalid username";
+                return false;
+            }
+
+
+        }
+        function KTMK() {
+            var mk = document.getElementById("txtpsw").value;
+            var v = /^[a-zA-Z0-9]{8,20}$/;
+
+            if (v.test(mk) == true) {
+                document.getElementById("Loimk").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("Loimk").innerHTML = "Enter 8 to 20 alphanumeric characters";
+                return false;
+            }
+        }
+        function KTMK1() {
+            var mk = document.getElementById("txtpsw").value;
+            var mk1 = document.getElementById("txtpsw2").value;
+            if (mk == mk1) {
+                document.getElementById("Loimk1").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("Loimk1").innerHTML = "Incorrect";
+                return false;
+            }
+        }
+        function KTHoTen() {
+            var mk = document.getElementById("txtHoTen").value;
+            var re = /([A-Z][a-z])+(\s[A-Z][a-z]+)*/;
+            if (re.test(mk)) {
+                document.getElementById("Loiten").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("Loiten").innerHTML = "Invalid name";
+                return false;
+            }
+        }
+        function KTSDT() {
+            var sdt = document.getElementById("txtSDT").value;
+            var reg = /[0-9]{9,15}/;
+            if (reg.test(sdt)) {
+                document.getElementById("Loisdt").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("Loisdt").innerHTML = "Phone numbers 9 to 15 digits";
+                return false;
+            }
+        }
+        function KTNS() {
+            var ns = new Date(document.getElementById("txtNgaySinh").value);
+            var hientai = new Date();
+            var d = hientai.getDate();
+            var m = hientai.getMonth();
+            var y = hientai.getFullYear();
+            var ymd = y + "-" + (m + 1) + "-" + d;
+            if (ns.length <= 0) {
+                document.getElementById("Loins").innerHTML = "Please enter your date of birth!";
+                return false;
+            }
+            if ((ns - hientai) >= 0) {
+                document.getElementById("Loins").innerHTML = "The date of birth must be before the current date";
+                return false
+            }
+            else {
+                document.getElementById("Loins").innerHTML = "";
+                return true;
+            }
+
+
+        }
+        function KTDC() {
+            var dc = document.getElementById("txtDiaChi").value;
+            var reg = /^[a-zA-Z0-9]+((,|-)[a-zA-Z0-9])+$/;
+            if (dc.length <= 0) {
+                document.getElementById("Loidc").innerHTML = "Please enter your address!"
+                return false;
+            }
+            else {
+                if (reg.test(dc)) {
+                    document.getElementById("Loidc").innerHTML = "";
+                    return true;
+                }
+                else {
+                    document.getElementById("Loidc").innerHTML = "Incorrect entry";
+                    return false;
+
+                }
+            }
+        }
+        function DangKy() {
+            if ((KTHoTen() == true) && (KiemTraDN() == true) && (KTMK() == true) && (KTMK1() == true) && (KTSDT() == true)&&(KTDC()==true)&&(KTNS()==true)) {
+                alert("Success");
+                $("#btnLogIn").show();
+                return true;
+            }
+            else {
+                alert("Invalid account information!");
+                return false;
+            }
+        }
+        function KTTenDN() {
+            var ten = document.getElementById("txtUserName").value;
+            var regular = /^[a-zA-Z0-9]+$/;
+            if (regular.test(ten)) {
+                document.getElementById("Loidn").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("Loidn").innerHTML = "Invalid username";
+                return false;
+            }
+        }
+        function KTPW() {
+            var mk = document.getElementById("txtPass").value;
+            var v = /^[a-zA-Z0-9]{8,20}$/;
+            if (v.test(mk)) {
+                document.getElementById("Loidn").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("Loidn").innerHTML = "Enter 8 to 20 alphanumeric characters";
+                return false;
+            }
+        }
+        function DangNhap() {
+            if (KTTenDN() == true && KTPW() == true) {
+                return true;
+            }
+            else {
+                document.getElementById("Loidn").innerHTML = "Username or password is incorrect";
+                return false;
+            }
+        }
+        $(document).ready(function () {
+            $("#btnLogIn").hide();
+
+
+
+        });
+    </script>
+    <script>
+            $(document).ready(function(){
+              // Activate Carousel
+              $("#myPrada").carousel({interval: 2300});
+                
+              // Enable Carousel Indicators
+              $(".item1").click(function(){
+                $("#myPrada").carousel(0);
+              });
+              $(".item2").click(function(){
+                $("#myPrada").carousel(1);
+              });
+              $(".item3").click(function(){
+                $("#myPrada").carousel(2);
+              });
+              $(".item4").click(function(){
+                $("#myPrada").carousel(3);
+              });
+                
+              // Enable Carousel Controls
+              $(".left").click(function(){
+                $("#myPrada").carousel("prev");
+              });
+              $(".right").click(function(){
+                $("#myPrada").carousel("next");
+              });
+            });
+            </script>
+</head>
+<body>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title" style="color:#333;text-align:center;">Registration</h2>
+                </div>
+                <div class="modal-body">
+                    <form class="form">
+                        <div class="form-group">
+                            <p>UserName</p>
+                            <input type="text" id="txtTenDN" required class="form-control" onchange="KiemTraDN();" style="background:none;" /><span id="LoiDN" style="color:red">*</span>
+                        </div>
+                        <div class="form-group">
+                            <p >Password</p>
+                            <input type="password" id="txtpsw" required class="form-control" onchange="KTMK();" style="background:none;" /><span id="Loimk" style="color:red">*</span>
+                        </div>
+                        <div class="form-group">
+                            <p>Repeat password</p>
+                            <input type="password" id="txtpsw2" required class="form-control" onchange="KTMK1();" style="background:none;" /><span id="Loimk1" style="color:red">*</span>
+                        </div>
+                        <div class="form-group">
+                            <p>FullName</p>
+                            <input type="text" id="txtHoTen" required class="form-control" onchange="KTHoTen();" style="background:none;" /><span id="Loiten" style="color:red">*</span>
+                        </div>
+                        <div class="form-group">
+                            <p>Birthdate</p>
+                            <input type="date" id="txtNgaySinh" onblur="KTNS();" required class="form-control" style="background:none;" /><span id="Loins" style="color:red">*</span>
+                        </div>
+                        <div class="form-group">
+                            <p>Sex</p>
+                            <input type="radio" name="rad1" value="nam" checked="checked"/>Male
+                            <input type="radio" name="rad1" value="nu" />Female<br />
+                        </div>
+                        <div class="form-group">
+                            <p>Phone number</p>
+                            <input type="text" id="txtSDT" required class="form-control" style="background:none;" /><span id="Loisdt" style="color:red">*</span>
+                        </div>
+                        <div class="form-group">
+                            <p>Address</p>
+                            <input type="text" id="txtDiaChi" required class="form-control" onblur="KTDC();" style="background:none;" /><span id="Loidc" style="color:red">*</span>
+                            <br /><br />
+                            <button type="button" class="btn btn-info btn-lg" onclick="DangKy();">SignUp</button>
+                            <button type="button" class="btn btn-info btn-lg" id="btnLogIn" data-toggle="modal" data-target="#LogIn">LogIn Now</button>
+                        </div>
+
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="modal fade" id="LogIn" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title" style="color:#333;text-align:center;">Log In</h2>
+                </div>
+                <div class="modal-body">
+                    <form class="form">
+                        <div class="form-group">
+                            <p>UserName</p>
+                            <input type="text" id="txtUserName" required class="form-control" onblur="KTTenDN();" /><span></span>
+                        </div>
+                        <div class="form-group">
+                            <p>Password</p>
+                            <input type="password" id="txtPass" required class="form-control" onblur="KTPW();" /><span id="Loidn" style="color:red"></span>
+                        </div><br />
+                        <h3 style="text-align:center;"><a href="#">Forgot password?</a></h3>
+                        <button type="button" class="btn btn-info btn-lg" onclick="DangNhap();" style="width:100%;">Sign In</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+            <nav class="navbar navbar-fixed-top" style="background-color:white;">
+                    <div class="container-fluid">
+                      <div class="navbar-header">
+                        <a class="navbar-brand" href="index.html" id="mau" style="font-size: 20px;">PRADA</a>
+                      </div>
+                      <ul class="nav navbar-nav">
+                        <li><a href="women.html" id="mau">Women</a></li>
+                        <li><a href="men.html"id="mau">Men</a></li>
+                        <li><a href="contact.html"id="mau">Contact</a></li>
+                      </ul>
+                      <ul class="nav navbar-nav navbar-right">
+                            <li><i class="fa fa-shopping-basket" id="icon3"></i></li>
+                          <li><a href="#" id="mau" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-user"></i> Sign Up</a></li>
+                        <li><a href="#" id="mau" data-toggle="modal" data-target="#LogIn" ><i class="glyphicon glyphicon-log-in"></i> Login</a></li>
+                      </ul>
+                    </div>
+            </nav>
+    </div>
+    <div style="margin-top: 25px; width: 100%;">
+            <div id="myPrada" class="carousel slide" data-ride="carousel">
+              <!--  -->
+              <ol class="carousel-indicators">
+                <li data-target="#myPrada" data-slide-to="0" class="active"></li>
+                <li data-target="#myPrada" data-slide-to="1"></li>
+                <li data-target="#myPrada" data-slide-to="2"></li>
+                <li data-target="#myPrada" data-slide-to="3"></li>
+              </ol>
+          
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+          
+                <div class="item active">
+                  <a href="t3.html"><img src="../Images/women/c.jpg" alt="Los Angeles" style="width:100%; height: 900px;"></a>
+                  <div class="carousel-caption">
+                    <h2>Adut Akech</h2>
+                    <p>Josh Olins Captures Adut Akech In 'The Last Hour' For Vogue Italia April 2019.</p>
+                  </div>
+                </div>
+              
+                <div class="item">
+                  <a href="t4.html"><img src="../Images/women/c7.jpg" alt="Los Angeles" style="width:100%; height: 900px;"></a>
+                  <div class="carousel-caption">
+                    <h2>Adut Akech</h2>
+                    <p>Josh Olins Captures Adut Akech In 'The Last Hour' For Vogue Italia April 2019</p>
+                  </div>
+                </div>
+
+                <div class="item">
+                        <a href="#"><img src="../Images/women/c10.jpg" alt="Los Angeles" style="width:100%; height: 900px;"></a>
+                        <div class="carousel-caption">
+                          <h2>Mirko Fuhrherr</h2>
+                          <p>MMSCENE PORTRAITS: Marin Barba Rosie by Mirko Fuhrherr</p>
+                        </div>
+                      </div>
+                <div class="item">
+                        <a href="#"><img src="../Images/women/c11.jpg" alt="Los Angeles" style="width:100%; height: 900px;"></a>
+                        <div class="carousel-caption">
+                            <h2>Adut Akech</h2>
+                            <p>Harper’s Bazaar Singapore April 2018 Maggie Jablonski and Becca Horn by Georges Antoni</p>
+                        </div>
+                    </div>
+                
+                
+              </div>
+          
+              <!-- Left and right controls -->
+              <a class="left carousel-control" href="#myPrada" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#myPrada" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          
+    </div>   
+    <div class="container">
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-md-9">
+                <div class="row" style="height: 500px; border-bottom: 1px solid #737373">
+                    <div class="col-md-5">
+                        <a href="t2.html" target="_blank"><img src="../Images/women/n1.jpg"></a>
+                    </div>
+                    <div class="col-md-7">
+                        <a href="t2.html"><h3 id="h">Liane Hurvitz for Factice Magazine with Ellie Brinkman</h3></a>
+                        <p id="pad">Born in South Africa, Liane is a Melbourne-based Fashion and Commercial Photographer. Liane’s style 
+                            is unique and her aesthetic distinctive. She is highly regarded in the industry for her work and her ability
+                             to artistically transform every image, creating impactful images that sets her work apart in the industry... </p>
+                         <div class="row">
+                             <div class="col-md-12">
+                                    <a href="t2.html" target="_blank"><button id="nut1">Read More</button></a>
+                             </div>
+                             <div class="col-md-12" id="canicon">
+                                    <span class="fa fa-heart" id="icon" style="color:  #ff3333"></span>
+                                    <span class="fab fa-pinterest" id="icon" style="color:red;"></span>
+                                    <span class="fa fa-comments" id="icon" style="color: #1ab2ff"></span>
+                                    <span class="fa fa-shopping-cart" id="icon" style="color: #4d4d4d"></span>
+                             </div>
+                         </div>
+                    </div>
+                </div>
+                    <div class="row" style="height: 500px; border-bottom: 1px solid #737373">
+                        <div class="col-md-5">
+                            <a href="#"><img src="../Images/men/m13.jpg" style="height: 450px;"></a>
+                        </div>
+                        <div class="col-md-7">
+                            <a><h3 id="h">Dominik Sadoch travels to palm springs for fall coat story</h3></a>
+                            <p id="pad">Dominik Sadoch continues to rack up editorials. The bright up and comer stars in a new spread
+                                 for The Telegraph. The magazine enlists photographer Ben Grieme for the fall story. Grieme collaborates
+                                  with stylist Jason Hughes, who puts designer coats in the forefront. Dominik plays leading man,
+                                   taking to Palm Springs, ... </p>
+                             <div class="row">
+                                 <div class="col-md-12">
+                                        <button id="nut1">Read More</button>
+                                 </div>
+                                 <div class="col-md-12" id="canicon">
+                                        <span class="fa fa-heart" id="icon" style="color:  #ff3333"></span>
+                                    <span class="fab fa-pinterest" id="icon" style="color:red;"></span>
+                                    <span class="fa fa-comments" id="icon" style="color: #1ab2ff"></span>
+                                    <span class="fa fa-shopping-cart" id="icon" style="color: #4d4d4d"></span>
+                                 </div>
+                             </div>
+                        </div>
+                    </div>
+                        <div class="row" style="height: 500px; border-bottom: 1px solid #737373">
+                            <div class="col-md-5">
+                                <a href="#"><img src="../Images/women/n2.jpg" style="height: 450px;"></a>
+                            </div>
+                            <div class="col-md-7">
+                                <a><h3 id="h">Harper’s Bazaar Singapore April 2019 Maggie Jablonski and Becca Horn by Georges Antoni</h3></a>
+                                <p id="pad">Talita von Furstenberg has launched her debut capsule collection, TVF for DVF, under her grandmother’s
+                                     eponymous label, Diane von Furstenberg. The American heiress and royal has always felt connected to fashion 
+                                     and considers printmaking her favourite aspect ... </p>
+                                 <div class="row">
+                                     <div class="col-md-12">
+                                            <button id="nut1">Read More</button>
+                                     </div>
+                                     <div class="col-md-12" id="canicon" style="margin-top: 40px;">
+                                            <span class="fa fa-heart" id="icon" style="color:  #ff3333"></span>
+                                    <span class="fab fa-pinterest" id="icon" style="color:red;"></span>
+                                    <span class="fa fa-comments" id="icon" style="color: #1ab2ff"></span>
+                                    <span class="fa fa-shopping-cart" id="icon" style="color: #4d4d4d"></span>
+                                     </div>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row" style="height: 500px;">
+                            <div class="col-md-5">
+                                <a href="m1.html" target="_blank"><img src="../Images/men/m4.jpg" style="height: 450px;"></a>
+                            </div>
+                            <div class="col-md-7">
+                                <a href="m1.html"><h3 id="h">MMSCENE STYLE STORIES: Drew Hanley by Julia Sariy</h3></a>
+                                <p id="pad">Talita von Furstenberg has launched her debut capsule collection, TVF for DVF, under her grandmother’s
+                                     eponymous label, Diane von Furstenberg. The American heiress and royal has always felt connected to fashion 
+                                     ... </p>
+                                 <div class="row">
+                                     <div class="col-md-12">
+                                            <a href="m1.html"><button id="nut1">Read More</button></a>
+                                     </div>
+                                     <div class="col-md-12" id="canicon" style="margin-top: 150px;">
+                                            <span class="fa fa-heart" id="icon" style="color:  #ff3333"></span>
+                                    <span class="fab fa-pinterest" id="icon" style="color:red;"></span>
+                                    <span class="fa fa-comments" id="icon" style="color: #1ab2ff"></span>
+                                    <span class="fa fa-shopping-cart" id="icon" style="color: #4d4d4d"></span>
+                                     </div>
+                                 </div>
+                            </div>
+                    </div>
+            </div>    
+            <div class="col-md-2" style="float: right">
+                <h5 style=" margin-top: 18px; color: black;">LAST 7 DAYS TRENDING</h5>
+                <div id="r">
+                    <div class="t">
+                        <a href="#"><img src="../Images/men/m4.jpg" alt="" style="margin-top: 0;" id="img1"></a>
+                    </div>
+                    <div class="d">
+                        <span id="span1">1.</span><a id="span2">Packaging Is Killing the Planet These Start-Ups Offer Luxe, Sustainable Solutions</a>
+                    </div>
+                </div>
+                <div id="r" style="margin-top: 20px;">
+                        <div class="t">
+                            <a href="#"><img src="../Images/men/m6.jpg" alt="" id="img1"></a>
+                        </div>
+                        <div class="d">
+                            <span id="span1">2.</span><a id="span2">These Work Out Clothes Will Get You Out of Your Winter Funk</a>
+                        </div>
+                    </div>
+                    <div id="r" style="margin-top: 30px;">
+                            <div class="t">
+                                <a href="#"><img src="../Images/men/m10.jpg" alt="" id="img1"></a>
+                            </div>
+                            <div class="d">
+                                <span id="span1">3.</span><a id="span2">MMSCENE PORTRAITS: Marin Barba Rosie by Mirko Fuhrherr</a>
+                            </div>
+                    </div>
+                        <div id="r" style="margin-top: 60px;">
+                                <div class="t">
+                                    <a href="#"><img src="../Images/women/w4.jpg" alt="" id="img1"></a>
+                                </div>
+                                <div class="d">
+                                    <span id="span1">4.</span><a id="span2">These Work Out Clothes Will Get You Out of Your Winter Funk</a>
+                                </div>
+                        </div>
+                
+            </div> 
+    </div> 
+    </div>
+    <div class="container-fluid">
+           
+            <div class="container" style="border-bottom: 1px solid #737373">
+                    <h1 style="text-align: center; font-size: 55px; font-family: Century; border-top: 1px solid #737373; padding-top: 20px;">The Awakening of Kim Kardashian West</h1>  
+                <div class="row">
+                    <div class="col-md-9" style="margin-top: 20px;">
+                            <div class="row" style="height: 500px; border-bottom: 1px solid #737373">
+                                    <div class="col-md-5">
+                                        <a href="t2.html" target="_blank"><img src="../Images/women/s3.jpg" style="height: 450px;"></a>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <a href="t2.html"><h3 id="h">How Pose Star Mj Rodriguez Got Ready For Her First Met Gala</h3></a>
+                                        <p id="pad">You never forget your first Met Gala. Among those making their First Monday in May red
+                                             carpet debut was actress Mj Rodriguez, who played to the "Camp: Notes on Fashion" theme with a 
+                                             flirty leopard print Richard Quinn frock, and spent the... </p>
+                                         <div class="row">
+                                             <div class="col-md-12">
+                                                    <a href="t2.html" target="_blank"><button id="nut1">Read More</button></a>
+                                             </div>
+                                             <div class="col-md-12" id="canicon">
+                                                    <span class="fa fa-heart" id="icon" style="color:  #ff3333"></span>
+                                                    <span class="fab fa-pinterest" id="icon" style="color:red;"></span>
+                                                    <span class="fa fa-comments" id="icon" style="color: #1ab2ff"></span>
+                                                    <span class="fa fa-shopping-cart" id="icon" style="color: #4d4d4d"></span>
+                                             </div>
+                                         </div>
+                                    </div>
+                                </div>
+                                <div class="row" style="height: 500px;">
+                                        <div class="col-md-5">
+                                            <a href="t6.html" target="_blank"><img src="../Images/men/m6.jpg" style="height: 450px;"></a>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <a href="t6.html"><h3 id="h">5 Office-Ready Style Hacks You’ll Need This Summer</h3></a>
+                                            <p id="pad">Dominik Sadoch continues to rack up editorials. The bright up and comer stars in a new spread
+                                                 for The Telegraph. The magazine enlists photographer Ben Grieme for the fall story. Grieme collaborates
+                                                  with stylist Jason Hughes, who puts designer coats in the forefront. Dominik plays leading man,
+                                                   taking to Palm Springs, ... </p>
+                                             <div class="row">
+                                                 <div class="col-md-12">
+                                                        <a href="t6.html"><button id="nut1" target="_blank">Read More</button></a>
+                                                 </div>
+                                                 <div class="col-md-12" id="canicon">
+                                                        <span class="fa fa-heart" id="icon" style="color:  #ff3333"></span>
+                                                    <span class="fab fa-pinterest" id="icon" style="color:red;"></span>
+                                                    <span class="fa fa-comments" id="icon" style="color: #1ab2ff"></span>
+                                                    <span class="fa fa-shopping-cart" id="icon" style="color: #4d4d4d"></span>
+                                                 </div>
+                                             </div>
+                                        </div>
+                                    </div>
+                    </div>
+                    
+                </div>
+            </div>         
+        </div>
+
+    <div class="container-fluid" style="width: 100%;">
+        <video width="100%" height="auto" controls autoplay loop muted class="videos" style="position:absolute; margin-top: 20px;z-index: -1; margin-left: -15px;">
+        <source src="../Images/video/video-home.mp4" type="video/mp4" />
+    </div>  
+    <footer class="container-fluid">
+            <div class="container">
+                    <div class="row">
+                            <div class="col-md-4 ftrai">
+                                <h2>PARADA</h2>
+                        
+                            </div>
+                            <div class="col-md-8 fphai"></div>
+                            <li style="list-style-type: none; color: white;"><span id="p1">About us</span>&nbsp;&nbsp;&nbsp;&nbsp;&#124;&nbsp;&nbsp;&nbsp;<span id="p1">Copyright</span>&nbsp;&nbsp;&nbsp;&nbsp;&#124;&nbsp;&nbsp;&nbsp;&nbsp;<span id="p1">Term & Conditions</span>&nbsp;&nbsp;&nbsp;&nbsp;&#124;&nbsp;&nbsp;&nbsp;&nbsp;<span id="p1">Sitemap</span>&nbsp;&nbsp;&nbsp;&nbsp;&#124;&nbsp;&nbsp;&nbsp;&nbsp;<span id="p1">Contact us</span></li><br>
+                            <p id="ab">460 Saint Catherine St. West, Suite 80 Montreal, (Quebec) H3B 1A7 Canada</p>
+                            <p id="ab">Phone: (08) 3940 5071 | Email: lienhe@elleman.vn</p>
+                            <p id="ab">Responsible for content management: Nguyen Thi Hong Hoa License of operation of general website No. 54 / GP-ICP, HCM on July 11, 2012</p>
+                            <p id="ab"> Copyright by PRADA Man Vietnam © 2019</p>
+                        </div>
+            </div>
+        </footer>    
+</body>
+</html>
