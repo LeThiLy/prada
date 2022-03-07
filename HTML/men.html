@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Men</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../CSS/bootstrap.css">
+        <script src="../JS/jquery.min.js"></script>
+        <script src="../JS/bootstrap.min.js"></script>
+        <style>
+body{
+    width: 100%;
+    height: auto;
+}
+#mau{
+    color: white;
+}
+#mau:hover{
+    
+    background-color:#737373;
+}
+#dau{
+    margin-top: 60px;
+   
+}
+#trai{
+    width: 35%;
+    float: left;
+    background-image: url(../Images/men/m1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 650px;
+    height: 600px;
+
+}
+#ndtrai{
+    background-color:white;
+    width: 90%;
+    height: 210px;
+    margin-top: 380px;
+    margin-left: 5%;
+    
+}
+#can{
+    width: 90%;
+    height: 70%;
+    margin-left: 4%;
+    padding-top: 1%;
+}
+#nd1{
+    width: 65%;
+    float: left;
+}
+#nd2{
+    width: 32%;
+    float: left;
+}
+#icon{
+    font-size: 18px;
+    text-shadow:1px 1px 3px gray;
+    margin-top: 10px;
+    padding: 0 3%;
+}
+#icon:hover{
+    color: gray;
+}
+#f1{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+#f1:hover{
+    color: gray;
+}
+#f2{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#phai{
+    width: 65%;   
+    float: left;
+    background-color: #1a1a1a;
+    height: 600px;
+    z-index: 2;
+}
+#phai2{
+    margin-top: 506px;
+    color: white;
+    margin-left: 5%;
+}
+h2{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#phai2 a{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #cccccc;
+}
+#phai2 a:hover{
+    color:white;
+    text-decoration: none;
+}
+#m1{
+    height: 700px;
+    background-color:#1a1a1a;
+}
+#m1 #tren, #anh{
+    height: 500px;
+}
+#m1 #duoi{
+    height: 200px;
+    text-align: center;
+}
+#m1 #duoi li{
+    margin-top: -10px;
+    list-style-type: none;
+}
+#duoi a:hover{
+    text-decoration: none;
+    color: #ff8080;
+
+}
+#icon1{
+    font-size: 20px;
+    text-shadow:1px 1px 4px gray;
+    margin: 0 2%;
+    color:black;
+}
+#icon1:hover{
+    color:white;
+}
+#nut2{
+    background-color:#1a1a1a; 
+    border: 1px solid #737373;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 15px;
+    cursor: pointer;
+    font: inherit;    
+}
+#nut2:hover{
+    color: white;
+    border: 1px solid #737373;
+    background-color: black;
+}
+#h:hover{
+    color: #ffb3b3;
+}
+footer{
+    width: 100%;
+    background-color: #1a1a1a;
+    height: 400px;
+    margin-top: 20px;
+}
+.ftrai{
+    height: 200px;
+    margin-top: 70px;
+    text-align: center;
+}
+.ftrai h2{
+    color: white;
+    font-size: 60px;
+    margin: 0 45px;
+    border-bottom: 5px solid white;
+    
+}
+.ftrai h2:hover{
+    color: lightgray;
+}
+.fphai{
+    margin-top: 80px;
+}
+#p1:hover{
+    color: #737373;
+}
+#ab{
+    font-family: Calibri;
+    font-size: 15px;
+    color:darkgray
+}
+img:hover{
+    opacity: 0.9;
+    filter: alpha(opacity=65.5);
+}
+#icon3{
+    font-size: 22px;
+    color: white;
+    margin-top: 13px;
+    margin-right: 15px;
+}
+#icon3:hover{
+    color: gray;
+}
+        </style>
+        <script language="javascript">
+            function KiemTraDN() {
+                var tendangnhap = document.getElementById("txtTenDN").value;
+                var regular = /^[a-zA-Z][a-zA-Z0-9]{5,11}$/;
+                if (tendangnhap.length < 6) {
+                    document.getElementById("LoiDN").innerHTML = "Username 6 - 12 characters starting with the letter character";
+                }
+                if (regular.test(tendangnhap) == true) {
+                    document.getElementById("LoiDN").innerHTML = "";
+                    return true;
+                }
+                else {
+                    document.getElementById("LoiDN").innerHTML = "Invalid username";
+                    return false;
+                }
+
+
+            }
+        function KTMK() {
+            var mk = document.getElementById("txtpsw").value;
+            var v = /^[a-zA-Z0-9]{8,20}$/;
+
+            if (v.test(mk) == true) {
+                document.getElementById("Loimk").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("Loimk").innerHTML = "Enter 8 to 20 alphanumeric characters";
+                return false;
+            }
+        }
+        function KTMK1() {
+            var mk = document.getElementById("txtpsw").value;
+            var mk1 = document.getElementById("txtpsw2").value;
+            if (mk == mk1) {
+                document.getElementById("Loimk1").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("Loimk1").innerHTML = "Incorrect";
+                return false;
+            }
+        }
+        function KTHoTen() {
+            var mk = document.getElementById("txtHoTen").value;
+            var re = /([A-Z][a-z])+(\s[A-Z][a-z]+)*/;
+            if (re.test(mk)) {
+                document.getElementById("Loiten").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("Loiten").innerHTML = "Invalid name";
+                return false;
+            }
+        }
+        function KTSDT() {
+            var sdt = document.getElementById("txtSDT").value;
+            var reg = /[0-9]{9,15}/;
+            if (reg.test(sdt)) {
+                document.getElementById("Loisdt").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("Loisdt").innerHTML = "Phone numbers 9 to 15 digits";
+                return false;
+            }
+        }
+        function KTNS() {
+            var ns = new Date(document.getElementById("txtNgaySinh").value);
+            var hientai = new Date();
+            var d = hientai.getDate();
+            var m = hientai.getMonth();
+            var y = hientai.getFullYear();
+            var ymd = y + "-" + (m + 1) + "-" + d;
+            if (ns.length <= 0) {
+                document.getElementById("Loins").innerHTML = "Please enter your date of birth!";
+                return false;
+            }
+            if ((ns - hientai) >= 0) {
+                document.getElementById("Loins").innerHTML = "The date of birth must be before the current date";
+                return false
+            }
+            else {
+                document.getElementById("Loins").innerHTML = "";
+                return true;
+            }
+
+
+        }
+        function KTDC() {
+            var dc = document.getElementById("txtDiaChi").value;
+            var reg = /^[a-zA-Z0-9]+((,|-)[a-zA-Z0-9])+$/;
+            if (dc.length <= 0) {
+                document.getElementById("Loidc").innerHTML = "Please enter your address!"
+                return false;
+            }
+            else {
+                if (reg.test(dc)) {
+                    document.getElementById("Loidc").innerHTML = "";
+                    return true;
+                }
+                else {
+                    document.getElementById("Loidc").innerHTML = "Incorrect entry";
+                    return false;
+
+                }
+            }
+        }
+        function DangKy() {
+            if ((KTHoTen() == true) && (KiemTraDN() == true) && (KTMK() == true) && (KTMK1() == true) && (KTSDT() == true)&&(KTDC()==true)&&(KTNS()==true)) {
+                alert("Success");
+                $("#btnLogIn").show();
+                return true;
+            }
+            else {
+                alert("Invalid account information!");
+                return false;
+            }
+        }
+        function KTTenDN() {
+            var ten = document.getElementById("txtUserName").value;
+            var regular = /^[a-zA-Z0-9]+$/;
+            if (regular.test(ten)) {
+                document.getElementById("Loidn").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("Loidn").innerHTML = "Invalid username";
+                return false;
+            }
+        }
+        function KTPW() {
+            var mk = document.getElementById("txtPass").value;
+            var v = /^[a-zA-Z0-9]{8,20}$/;
+            if (v.test(mk)) {
+                document.getElementById("Loidn").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("Loidn").innerHTML = "Enter 8 to 20 alphanumeric characters";
+                return false;
+            }
+        }
+        function DangNhap() {
+            if (KTTenDN() == true && KTPW() == true) {
+                return true;
+            }
+            else {
+                document.getElementById("Loidn").innerHTML = "Username or password is incorrect";
+                return false;
+            }
+        }
+        $(document).ready(function () {
+            $("#btnLogIn").hide();
+
+
+
+        });
+        </script>
+    </head>
+    <body>
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h2 class="modal-title" style="color: #333;text-align:center;">Registration</h2>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form">
+                            <div class="form-group">
+                                <p>UserName</p>
+                                <input type="text" id="txtTenDN" required class="form-control" onchange="KiemTraDN();" style="background:none;" /><span id="LoiDN" style="color:red">*</span>
+                            </div>
+                            <div class="form-group">
+                                <p>Password</p>
+                                <input type="password" id="txtpsw" required class="form-control" onchange="KTMK();" style="background:none;" /><span id="Loimk" style="color:red">*</span>
+                            </div>
+                            <div class="form-group">
+                                <p>Repeat password</p>
+                                <input type="password" id="txtpsw2" required class="form-control" onchange="KTMK1();" style="background:none;" /><span id="Loimk1" style="color:red">*</span>
+                            </div>
+                            <div class="form-group">
+                                <p>FullName</p>
+                                <input type="text" id="txtHoTen" required class="form-control" onchange="KTHoTen();" style="background:none;" /><span id="Loiten" style="color:red">*</span>
+                            </div>
+                            <div class="form-group">
+                                <p>Birthdate</p>
+                                <input type="date" id="txtNgaySinh" onblur="KTNS();" required class="form-control" style="background:none;" /><span id="Loins" style="color:red">*</span>
+                            </div>
+                            <div class="form-group">
+                                <p>Sex</p>
+                                <input type="radio" name="rad1" value="nam" checked="checked" />Male
+                                <input type="radio" name="rad1" value="nu" />Female<br />
+                            </div>
+                            <div class="form-group">
+                                <p>Phone number</p>
+                                <input type="text" id="txtSDT" required class="form-control" style="background:none;" /><span id="Loisdt" style="color:red">*</span>
+                            </div>
+                            <div class="form-group">
+                                <p>Address</p>
+                                <input type="text" id="txtDiaChi" required class="form-control" onblur="KTDC();" style="background:none;" /><span id="Loidc" style="color:red">*</span>
+                                <br /><br />
+                                <button type="button" class="btn btn-info btn-lg" onclick="DangKy();">SignUp</button>
+                                <button type="button" class="btn btn-info btn-lg" id="btnLogIn" data-toggle="modal" data-target="#LogIn">LogIn Now</button>
+                            </div>
+
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal fade" id="LogIn" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h2 class="modal-title" style="color:#333;text-align:center;">Log In</h2>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form">
+                            <div class="form-group">
+                                <p>UserName</p>
+                                <input type="text" id="txtUserName" required class="form-control" onblur="KTTenDN();" /><span></span>
+                            </div>
+                            <div class="form-group">
+                                <p>Password</p>
+                                <input type="password" id="txtPass" required class="form-control" onblur="KTPW();" /><span id="Loidn" style="color:red"></span>
+                            </div><br />
+                            <h3 style="text-align:center;"><a href="#">Forgot password?</a></h3>
+                            <button type="button" class="btn btn-info btn-lg" onclick="DangNhap();" style="width:100%;">Sign In</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <nav class="navbar navbar-fixed-top" style="background-color: #1a1a1a">
+                    <div class="container-fluid">
+                      <div class="navbar-header">
+                        <a class="navbar-brand" href="index.html" id="mau">PRADA</a>
+                      </div>
+                      <ul class="nav navbar-nav">
+                        <li class="active"><a href="index.html" id="mau">Home</a></li>
+                        <li><a href="women.html" id="mau">Women</a></li>
+                        <li><a href="men.html"id="mau">Men</a></li>
+                        <li><a href="contact.html"id="mau">Contact</a></li>
+                      </ul>
+                      <ul class="nav navbar-nav navbar-right">
+                        <li><i class="fa fa-shopping-basket" id="icon3"></i></li>
+                        <li><a href="" id="mau"  data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li><a href="#" id="mau" data-toggle="modal" data-target="#LogIn"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                      </ul>
+                    </div>
+            </nav>
+        </div>
+            <div id="dau">
+                <div id="trai">
+                    <div id="ndtrai">
+                        <div id="can">
+                             <h3 id="f1">Raf Simons Collaborator Sterling Ruby is Launching His Own Fashion Line</h3>
+                            <p id="f2"> L.A. based artist Sterling Ruby, who pushes the boundaries of  </p>
+                            <div style="margin-top:20px;">
+                            <div id="nd1">
+                                <button id="nut2">Read More</button>
+                            </div>
+                            <div id="nd2">
+                                <span class="fa fa-heart" id="icon"></span>
+                                <span class="fab fa-pinterest" id="icon" style="color:red;"></span>
+                                <span class="fa fa-comments" id="icon"></span>
+                                <span class="fa fa-shopping-cart" id="icon"></span>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div id="phai">
+                    <div>
+                        <video width="880px" height="465px" controls autoplay loop muted class="videos" style="position:absolute; z-index: 1; margin-top: 30px;">
+                        <source src="../Images/video/men.mp4" type="video/mp4" />
+                    </div>
+                    <div id="phai2">
+                       <h2>2019 Spring Campaign: Believe In Dreams</h2>
+                        <a href="https://www.youtube.com/watch?v=JTjxuqn67d4">EXPLORE ALL VIDEOS</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4" style="margin-top:40px;">
+
+                        <div id="m1" >
+                            <div id="tren">
+                                <a href="m1.html" target="_blank">
+                                <img src="../Images/men/m4.jpg" alt="Lights" style="width:100%" id="anh">
+                                </a>
+                            </div>
+                            <div id="duoi">
+                                <div style="height:130px;">
+                                        <a style=" text-decoration: none;" href="m1.html"><h3 style="color:white; text-align: center;" >MMSCENE PORTRAITS: Marin Barba Rosie by Mirko Fuhrherr</h3></a>
+                                </div>
+                                <div>
+                                        <li>
+                                                <span class="fa fa-heart" id="icon1"></span>
+                                                <span class="fab fa-pinterest" id="icon1"></span>
+                                                <a href="m1.html"><span id="icon1"><button id="nut2">Read More</button></span></a>
+                                                <span class="fa fa-comments" id="icon1"></span>
+                                                <span class="fa fa-shopping-cart" id="icon1"></span>
+                                        </li>
+                                </div>
+                               
+                            </div>                       
+                        </div>
+                    </div>
+                   
+                    <div class="col-md-4" style="margin-top:40px;">
+
+                            <div id="m1" >
+                                <div id="tren">
+                                    <a href="m2.html" target="_blank">
+                                    <img src="../Images/men/m5.jpg" alt="Lights" style="width:100%" id="anh">
+                                    </a>
+                                </div>
+                                <div id="duoi">
+                                    <div style="height:130px;">
+                                            <a style=" text-decoration: none;" href="m2.html"><h3 style="color:white; text-align: center;">Dominik Sadoch travels to palm springs for fall coat story.</h3></a>
+                                    </div>
+                                    <div>
+                                            <li>
+                                                    <span class="fa fa-heart" id="icon1"></span>
+                                                    <span class="fab fa-pinterest" id="icon1"></span>
+                                                    <a href="m2.html"><span id="icon1"><button id="nut2">Read More</button></span></a>
+                                                    <span class="fa fa-comments" id="icon1"></span>
+                                                    <span class="fa fa-shopping-cart" id="icon1"></span>
+                                                </li>
+                                    </div>
+                                   
+                                </div>                       
+                            </div>
+                        </div>
+                        <div class="col-md-4" style="margin-top:40px;">
+
+                                <div id="m1" >
+                                    <div id="tren">
+                                        <a href="m3.html" target="_blank">
+                                        <img src="../Images/men1/men8.jpg" alt="Lights" style="width:100%" id="anh">
+                                        </a>
+                                    </div>
+                                    <div id="duoi">
+                                        <div style="height:130px;">
+                                                <a style=" text-decoration: none;" href="m3.html"><h3 style="color:white; text-align: center;">MMSCENE STYLE STORIES: Drew Hanley by Julia Sariy</h3></a>
+                                        </div>
+                                        <div>
+                                                <li>
+                                                        <span class="fa fa-heart" id="icon1"></span>
+                                                        <span class="fab fa-pinterest" id="icon1"></span>
+                                                        <a href="m3.html"><span id="icon1"><button id="nut2">Read More</button></span></a>
+                                                        <span class="fa fa-comments" id="icon1"></span>
+                                                        <span class="fa fa-shopping-cart" id="icon1"></span>
+                                                    </li>
+                                        </div>
+                                    </div>                       
+                                </div>
+                            </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4" style="margin-top:20px;">
+
+                        <div id="m1" >
+                            <div id="tren">
+                                <a href="../Images/men/m8.jpg" target="_blank">
+                                <img src="../Images/men/m8.jpg" alt="Lights" style="width:100%" id="anh">
+                                </a>
+                            </div>
+                            <div id="duoi">
+                                <div style="height:130px;">
+                                        <a style=" text-decoration: none;"><h3 style="color:white; text-align: center;" >Amal Clooney Is Back in Action And Looks Better Than Ever</h3></a>
+                                </div>
+                                <div>
+                                        <li>
+                                                <span class="fa fa-heart" id="icon1"></span>
+                                                <span class="fab fa-pinterest" id="icon1"></span>
+                                                <span id="icon1"><button id="nut2">Read More</button></span>
+                                                <span class="fa fa-comments" id="icon1"></span>
+                                                <span class="fa fa-shopping-cart" id="icon1"></span>
+                                            </li>
+                                </div>
+                               
+                            </div>                       
+                        </div>
+                    </div>
+                    <div class="col-md-4" style="margin-top:20px;">
+
+                            <div id="m1" >
+                                <div id="tren">
+                                    <a href="../Images/men/m7.jpg" target="_blank">
+                                    <img src="../Images/men/m7.jpg" alt="Lights" style="width:100%" id="anh">
+                                    </a>
+                                </div>
+                                <div id="duoi">
+                                    <div style="height:130px;">
+                                            <a style=" text-decoration: none;"><h3 style="color:white; text-align: center;">Packaging Is Killing the Planet These Start-Ups Offer Luxe, Sustainable Solutions</h3></a>
+                                    </div>
+                                    <div>
+                                            <li>
+                                                    <span class="fa fa-heart" id="icon1"></span>
+                                                    <span class="fab fa-pinterest" id="icon1"></span>
+                                                    <span id="icon1"><button id="nut2">Read More</button></span>
+                                                    <span class="fa fa-comments" id="icon1"></span>
+                                                    <span class="fa fa-shopping-cart" id="icon1"></span>
+                                                </li>
+                                    </div>
+                                   
+                                </div>                       
+                            </div>
+                        </div>
+                        <div class="col-md-4" style="margin-top:20px;">
+
+                                <div id="m1" >
+                                    <div id="tren">
+                                        <a href="../Images/men/m10.jpg" target="_blank">
+                                        <img src="../Images/men/m10.jpg" alt="Lights" style="width:100%" id="anh">
+                                        </a>
+                                    </div>
+                                    <div id="duoi">
+                                        <div style="height:130px;">
+                                                <a style=" text-decoration: none;"><h3 style="color:white; text-align: center;">11 Holiday Party Ideas and a DIY Holiday Ice Bucket</h3></a>
+                                        </div>
+                                        <div>
+                                                <li>
+                                                        <span class="fa fa-heart" id="icon1"></span>
+                                                        <span class="fab fa-pinterest" id="icon1"></span>
+                                                        <span id="icon1"><button id="nut2">Read More</button></span>
+                                                        <span class="fa fa-comments" id="icon1"></span>
+                                                        <span class="fa fa-shopping-cart" id="icon1"></span>
+                                                    </li>
+                                        </div>
+                                    </div>                       
+                                </div>
+                            </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4" style="margin-top:20px;">
+
+                        <div id="m1" >
+                            <div id="tren">
+                                <a href="../Images/men/m11.jpg" target="_blank">
+                                <img src="../Images/men/m11.jpg" alt="Lights" style="width:100%" id="anh">
+                                </a>
+                            </div>
+                            <div id="duoi">
+                                <div style="height:130px;">
+                                        <a style=" text-decoration: none;"><h3 style="color:white; text-align: center;" >20+ Fresh & Chic Summer Work Outfits</h3></a>
+                                </div>
+                                <div>
+                                        <li>
+                                                <span class="fa fa-heart" id="icon1"></span>
+                                                <span class="fab fa-pinterest" id="icon1"></span>
+                                                <span id="icon1"><button id="nut2">Read More</button></span>
+                                                <span class="fa fa-comments" id="icon1"></span>
+                                                <span class="fa fa-shopping-cart" id="icon1"></span>
+                                            </li>
+                                </div>
+                               
+                            </div>                       
+                        </div>
+                    </div>
+                    <div class="col-md-4" style="margin-top:20px;">
+
+                            <div id="m1" >
+                                <div id="tren">
+                                    <a href="../Images/men/m13.jpg" target="_blank">
+                                    <img src="../Images/men/m13.jpg" alt="Lights" style="width:100%" id="anh">
+                                    </a>
+                                </div>
+                                <div id="duoi">
+                                    <div style="height:130px;">
+                                            <a style=" text-decoration: none;"><h3 style="color:white; text-align: center;">Think You Can’t Wear a Suit in the Summer? Just Add Shorts!</h3></a>
+                                    </div>
+                                    <div>
+                                            <li>
+                                                    <span class="fa fa-heart" id="icon1"></span>
+                                                    <span class="fab fa-pinterest" id="icon1"></span>
+                                                    <span id="icon1"><button id="nut2">Read More</button></span>
+                                                    <span class="fa fa-comments" id="icon1"></span>
+                                                    <span class="fa fa-shopping-cart" id="icon1"></span>
+                                                </li>
+                                    </div>
+                                   
+                                </div>                       
+                            </div>
+                        </div>
+                        <div class="col-md-4" style="margin-top:20px;">
+
+                                <div id="m1" >
+                                    <div id="tren">
+                                        <a href="../Images/men/m6.jpg" target="_blank">
+                                        <img src="../Images/men/m6.jpg" alt="Lights" style="width:100%" id="anh">
+                                        </a>
+                                    </div>
+                                    <div id="duoi">
+                                        <div style="height:130px;">
+                                                <a style=" text-decoration: none;"><h3 style="color:white; text-align: center;">5 Trends to Try This Spring Break (Under $150!)</h3></a>
+                                        </div>
+                                        <div>
+                                                <li>
+                                                        <span class="fa fa-heart" id="icon1"></span>
+                                                        <span class="fab fa-pinterest" id="icon1"></span>
+                                                        <span id="icon1"><button id="nut2">Read More</button></span>
+                                                        <span class="fa fa-comments" id="icon1"></span>
+                                                        <span class="fa fa-shopping-cart" id="icon1"></span>
+                                                    </li>
+                                        </div>
+                                    </div>                       
+                                </div>
+                            </div>
+                </div>
+            </div>
+            <footer class="container-fluid">
+                <div class="container">
+                        <div class="row">
+                                <div class="col-md-4 ftrai">
+                                    <h2>PARADA</h2>
+                            
+                                </div>
+                                <div class="col-md-8 fphai"></div>
+                                <li style="list-style-type: none; color: white;"><span id="p1">About us</span>&nbsp;&nbsp;&nbsp;&nbsp;&#124;&nbsp;&nbsp;&nbsp;<span id="p1">Copyright</span>&nbsp;&nbsp;&nbsp;&nbsp;&#124;&nbsp;&nbsp;&nbsp;&nbsp;<span id="p1">Term & Conditions</span>&nbsp;&nbsp;&nbsp;&nbsp;&#124;&nbsp;&nbsp;&nbsp;&nbsp;<span id="p1">Sitemap</span>&nbsp;&nbsp;&nbsp;&nbsp;&#124;&nbsp;&nbsp;&nbsp;&nbsp;<span id="p1">Contact us</span></li><br>
+                                <p id="ab">460 Saint Catherine St. West, Suite 80 Montreal, (Quebec) H3B 1A7 Canada</p>
+                                <p id="ab">Phone: (08) 3940 5071 | Email: lienhe@elleman.vn</p>
+                                <p id="ab">Responsible for content management: Nguyen Thi Hong Hoa License of operation of general website No. 54 / GP-ICP, HCM on July 11, 2012</p>
+                                <p id="ab"> Copyright by PRADA Man Vietnam © 2019</p>
+                            </div>
+                </div>
+            </footer> 
+        
+    </body>
+</html>

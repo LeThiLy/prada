@@ -1,0 +1,471 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <title>Women Home 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../CSS/bootstrap.css">
+    <script src="../JS/jquery.min.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
+    <style>
+        body{
+            width: 100%;
+            height: auto;
+        }
+        #mau{
+            color: white;
+        }
+        #mau:hover{
+            
+            background-color:#ff6666;
+        }
+        #icon3{
+            font-size: 22px;
+            color: white;
+            margin-top: 13px;
+            margin-right: 15px;
+        }
+        #icon3:hover{
+            color:#ffb3b3;
+        }
+        #h{
+            font-size: 52px;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            padding: 30px 0;
+        }
+        #link1{
+            text-decoration: none;
+            color: #ff8080;
+        }
+        #link1:hover{
+            color: #ff8080;
+        }
+        #r{
+            width: 100%;
+            height: 270px;
+            float: left;
+        }
+        #t{
+            width: 100%;
+            height: 70%;
+        }
+        #d{
+            width: 100%;
+            height: 30%;
+        }
+        #span1{
+            color: #737373;
+            width: 17%;
+            float: left;
+            font-size: 45px;
+            font-family: Book Antiqua;
+            margin-top: 10px;
+        }
+        #span2{
+            margin-top: 10px;
+            width: 80%;
+            float: left;
+            font-family: Cambria Math;
+            font-size: 14px;
+            color: #808080;
+            text-decoration: none
+        }
+        #span2:hover{
+            color: #404040;
+        }
+
+        #img1:hover{
+            opacity: 0.6;
+            filter: alpha(opacity=60);
+        }
+        footer{
+            background-color: #ff8080;
+            height: 400px;
+            margin-top: 20px;
+        }
+        .ftrai{
+            height: 200px;
+            margin-top: 70px;
+            text-align: center;
+        }
+        .ftrai h2{
+            color: white;
+            font-size: 60px;
+            margin: 0 45px;
+            border-bottom: 5px solid white;
+            
+        }
+        .ftrai h2:hover{
+            color: black;
+        }
+        .fphai{
+            margin-top: 80px;
+        }
+        #p1:hover{
+            color: #ffb3b3;
+        }
+        #ab{
+            font-family: Calibri;
+            font-size: 15px;
+        }
+    </style>
+        <script language="javascript">
+            function KiemTraDN() {
+                var tendangnhap = document.getElementById("txtTenDN").value;
+                var regular = /^[a-zA-Z][a-zA-Z0-9]{5,11}$/;
+                if (tendangnhap.length < 6) {
+                    document.getElementById("LoiDN").innerHTML = "Username 6 - 12 characters starting with the letter character";
+                }
+                if (regular.test(tendangnhap) == true) {
+                    document.getElementById("LoiDN").innerHTML = "";
+                    return true;
+                }
+                else {
+                    document.getElementById("LoiDN").innerHTML = "Invalid username";
+                    return false;
+                }
+
+
+            }
+        function KTMK() {
+            var mk = document.getElementById("txtpsw").value;
+            var v = /^[a-zA-Z0-9]{8,20}$/;
+
+            if (v.test(mk) == true) {
+                document.getElementById("Loimk").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("Loimk").innerHTML = "Enter 8 to 20 alphanumeric characters";
+                return false;
+            }
+        }
+        function KTMK1() {
+            var mk = document.getElementById("txtpsw").value;
+            var mk1 = document.getElementById("txtpsw2").value;
+            if (mk == mk1) {
+                document.getElementById("Loimk1").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("Loimk1").innerHTML = "Incorrect";
+                return false;
+            }
+        }
+        function KTHoTen() {
+            var mk = document.getElementById("txtHoTen").value;
+            var re = /([A-Z][a-z])+(\s[A-Z][a-z]+)*/;
+            if (re.test(mk)) {
+                document.getElementById("Loiten").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("Loiten").innerHTML = "Invalid name";
+                return false;
+            }
+        }
+        function KTSDT() {
+            var sdt = document.getElementById("txtSDT").value;
+            var reg = /[0-9]{9,15}/;
+            if (reg.test(sdt)) {
+                document.getElementById("Loisdt").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("Loisdt").innerHTML = "Phone numbers 9 to 15 digits";
+                return false;
+            }
+        }
+        function KTNS() {
+            var ns = new Date(document.getElementById("txtNgaySinh").value);
+            var hientai = new Date();
+            var d = hientai.getDate();
+            var m = hientai.getMonth();
+            var y = hientai.getFullYear();
+            var ymd = y + "-" + (m + 1) + "-" + d;
+            if (ns.length <= 0) {
+                document.getElementById("Loins").innerHTML = "Please enter your date of birth!";
+                return false;
+            }
+            if ((ns - hientai) >= 0) {
+                document.getElementById("Loins").innerHTML = "The date of birth must be before the current date";
+                return false
+            }
+            else {
+                document.getElementById("Loins").innerHTML = "";
+                return true;
+            }
+
+
+        }
+        function KTDC() {
+            var dc = document.getElementById("txtDiaChi").value;
+            var reg = /^[a-zA-Z0-9]+((,|-)[a-zA-Z0-9])+$/;
+            if (dc.length <= 0) {
+                document.getElementById("Loidc").innerHTML = "Please enter your address!"
+                return false;
+            }
+            else {
+                if (reg.test(dc)) {
+                    document.getElementById("Loidc").innerHTML = "";
+                    return true;
+                }
+                else {
+                    document.getElementById("Loidc").innerHTML = "Incorrect entry";
+                    return false;
+
+                }
+            }
+        }
+        function DangKy() {
+            if ((KTHoTen() == true) && (KiemTraDN() == true) && (KTMK() == true) && (KTMK1() == true) && (KTSDT() == true)&&(KTDC()==true)&&(KTNS()==true)) {
+                alert("Success");
+                $("#btnLogIn").show();
+                return true;
+            }
+            else {
+                alert("Invalid account information!");
+                return false;
+            }
+        }
+        function KTTenDN() {
+            var ten = document.getElementById("txtUserName").value;
+            var regular = /^[a-zA-Z0-9]+$/;
+            if (regular.test(ten)) {
+                document.getElementById("Loidn").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("Loidn").innerHTML = "Invalid username";
+                return false;
+            }
+        }
+        function KTPW() {
+            var mk = document.getElementById("txtPass").value;
+            var v = /^[a-zA-Z0-9]{8,20}$/;
+            if (v.test(mk)) {
+                document.getElementById("Loidn").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("Loidn").innerHTML = "Enter 8 to 20 alphanumeric characters";
+                return false;
+            }
+        }
+        function DangNhap() {
+            if (KTTenDN() == true && KTPW() == true) {
+                return true;
+            }
+            else {
+                document.getElementById("Loidn").innerHTML = "Username or password is incorrect";
+                return false;
+            }
+        }
+        $(document).ready(function () {
+            $("#btnLogIn").hide();
+
+
+
+        });
+        </script>
+        
+
+    </head>
+    <body>
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h2 class="modal-title" style="color:#333;text-align:center;">Registration</h2>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form">
+                            <div class="form-group">
+                                <p>UserName</p>
+                                <input type="text" id="txtTenDN" required class="form-control" onchange="KiemTraDN();" style="background:none;" /><span id="LoiDN" style="color:red">*</span>
+                            </div>
+                            <div class="form-group">
+                                <p>Password</p>
+                                <input type="password" id="txtpsw" required class="form-control" onchange="KTMK();" style="background:none;" /><span id="Loimk" style="color:red">*</span>
+                            </div>
+                            <div class="form-group">
+                                <p>Repeat password</p>
+                                <input type="password" id="txtpsw2" required class="form-control" onchange="KTMK1();" style="background:none;" /><span id="Loimk1" style="color:red">*</span>
+                            </div>
+                            <div class="form-group">
+                                <p>FullName</p>
+                                <input type="text" id="txtHoTen" required class="form-control" onchange="KTHoTen();" style="background:none;" /><span id="Loiten" style="color:red">*</span>
+                            </div>
+                            <div class="form-group">
+                                <p>Birthdate</p>
+                                <input type="date" id="txtNgaySinh" onblur="KTNS();" required class="form-control" style="background:none;" /><span id="Loins" style="color:red">*</span>
+                            </div>
+                            <div class="form-group">
+                                <p>Sex</p>
+                                <input type="radio" name="rad1" value="nam" checked="checked" />Male
+                                <input type="radio" name="rad1" value="nu" />Female<br />
+                            </div>
+                            <div class="form-group">
+                                <p>Phone number</p>
+                                <input type="text" id="txtSDT" required class="form-control" style="background:none;" /><span id="Loisdt" style="color:red">*</span>
+                            </div>
+                            <div class="form-group">
+                                <p>Address</p>
+                                <input type="text" id="txtDiaChi" required class="form-control" onblur="KTDC();" style="background:none;" /><span id="Loidc" style="color:red">*</span>
+                                <br /><br />
+                                <button type="button" class="btn btn-info btn-lg" onclick="DangKy();">SignUp</button>
+                                <button type="button" class="btn btn-info btn-lg" id="btnLogIn" data-toggle="modal" data-target="#LogIn">LogIn Now</button>
+                            </div>
+
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal fade" id="LogIn" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h2 class="modal-title" style="color:blue;text-align:center;">Log In</h2>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form">
+                            <div class="form-group">
+                                <p>UserName</p>
+                                <input type="text" id="txtUserName" required class="form-control" onblur="KTTenDN();" /><span></span>
+                            </div>
+                            <div class="form-group">
+                                <p>Password</p>
+                                <input type="password" id="txtPass" required class="form-control" onblur="KTPW();" /><span id="Loidn" style="color:red"></span>
+                            </div><br />
+                            <h3 style="text-align:center;"><a href="#">Forgot password?</a></h3>
+                            <button type="button" class="btn btn-info btn-lg" onclick="DangNhap();" style="width:100%;">Sign In</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+            <nav class="navbar navbar-fixed-top" style="background-color:#ff8080">
+                    <div class="container-fluid">
+                      <div class="navbar-header">
+                        <a class="navbar-brand" href="index.html" id="mau">PRADA</a>
+                      </div>
+                      <ul class="nav navbar-nav">
+                        <li class="active"><a href="index.html" id="mau">Home</a></li>
+                        <li><a href="women.html" id="mau">Women</a></li>
+                        <li><a href="men.html"id="mau">Men</a></li>
+                        <li><a href="contact.html"id="mau">Contact</a></li>
+                      </ul>
+                      <ul class="nav navbar-nav navbar-right">
+                            <li><i class="fa fa-shopping-basket" id="icon3"></i></li>
+                          <li><a href="#" id="mau" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-user"></i> Sign Up</a></li>
+                        <li><a href="#" id="mau" data-toggle="modal" data-target="#LogIn" ><i class="glyphicon glyphicon-log-in"></i> Login</a></li>
+                      </ul>
+                    </div>
+            </nav>
+            <div class="container">
+                    <div class="row" style="margin-top: 40px;">
+                        <div class="col-md-12">
+                            <img src="../Images/women/s1.jpg" alt="" style="width: 100%; height: auto;">
+                            <h1 id="h">5 Office-Ready Style Hacks You’ll Need This Summer</h1>    
+                        </div>
+                        <div class="col-md-8">
+                            <p>Need a little inspiration for your summer work wardrobe? Look no further than the women of Tbilisi Fashion Week. Women on the streets of the Georgian city are showing off their best late spring style, and it’s filled with ideas that will keep your work wardrobe, well, working. Some tricks are unfussy, like adding a pop of color in a menswear-inspired button down, others are a bit more daring, like layering lamé pieces or changing out a stud earring for a sparkling drop. Whether you’re going bold or just looking to change up your uniform, consider these five styling tricks to step up your work outfit this summer and beyond.</p>
+                            <h4 id="h" style="font-size: 35px; padding: 5px 0;">Layer With Lamé</h4>
+                            <p>Sometimes the silhouette alone is the reason we deem an item “office appropriate.” A pleated skirt and a high neck blouse are good examples—but don’t only reach for these items in wooly fabrics or neutral colors. This summer, consider your typical uniform pieces in lighter, warm weather fabrics that make a statement in gold lamé.</p>
+                            <img src="../Images/women/c1.jpg" alt="" style="width: 100%; height: auto; margin-top: 10px;">
+                            <p>PHOTOGRAPHED BY ACIELLE / STYLE DU MONDE</p>
+                            <h4 id="h" style="font-size: 35px; padding: 5px 0;">Have a Backup Button Up</h4>
+                            <p>Although we would argue that there is no such thing as owning too many white tops and blouses, adding additional light-colored shirts into the mix can keep your work outfits feeling fresh. Repeat your usual office looks by rotating white tops with alternatives in pastels and neutrals—these hues are trending after all!</p>
+                            <img src="../Images/women/v1.jpg" alt="" style="width: 100%; height: auto; margin-top: 10px;">
+                            <p>PHOTOGRAPHED BY ACIELLE / STYLE DU MONDE</p>
+                            <h4 id="h" style="font-size: 35px; padding: 5px 0;">Office Friendly Heels Don’t Have to Be Black</h4>
+                            <p>Find yourself staring at a sea of all black mules, slingbacks, or flats every morning? Consider trying out your go-to office shoe in a different color. For more corporate environments stick to something neutral, maybe a chestnut brown or caramel nude color, or for a more relaxed environment take the plunge into cherry red or baby blue. </p>
+                            <img src="../Images/women/v2.jpg" alt="" style="width: 100%; height: auto; margin-top: 10px;">
+                            <p>PHOTOGRAPHED BY ACIELLE / STYLE DU MONDE</p>
+                            <h4 id="h" style="font-size: 35px; padding: 5px 0;">A Silk Scarf Goes a Long Way</h4>
+                            <p>When your go to blazer starts to boring and that midi dress isn’t as exciting to wear as it was when you first bought it, try fastening a silk scarf to these uniform items for a little flair. The most unexpected way to knot one on is to tie it around the waist atop a long black overcoat and white maxi skirt. Belts be damned.</p>
+                            <img src="../Images/women/v3.jpg" alt="" style="width: 100%; height: auto; margin-top: 10px;">
+                            <h4 id="h" style="font-size: 35px; padding: 5px 0;">Put on Some Glitz—Within Reason!</h4>
+                            <p>You don’t need a party invitation for an excuse to sparkle. This spring, the modern woman was one with diamante-dusted shoulders—see the cardigans at Paco Rabanne, denim jumpsuits at Isabel Marant, or boxy blazers on the streets of Tbilisi for the proof. A few of our very own Vogue editors are trying the trend at the office too, and we don’t just mean on the First Monday in May.</p>
+                            <img src="../Images/women/v4.jpg" alt="" style="width: 100%; height: auto; margin-top: 10px;">
+                            <p>PHOTOGRAPHED BY ACIELLE / STYLE DU MONDE</p>
+                        </div>
+                        <div class="col-md-3" style="float: right;">
+                                    <h4>LAST 7 DAYS TRENDING</h4>
+                                    <div id="r">
+                                            <div class="t">
+                                                <a href="#"><img src="../Images/Women/nn1.png" alt="" style="margin-top: 0; width: 255px;" id="img1"></a>
+                                            </div>
+                                            <div class="d">
+                                                <span id="span1">1.</span><a id="span2">Packaging Is Killing the Planet These Start-Ups Offer Luxe, Sustainable Solutions</a>
+                                            </div>
+                                    </div>
+                                    <div id="r">
+                                            <div class="t">
+                                                <a href="#"><img src="../Images/Women/nn2.png" alt="" style="margin-top: 0; width: 255px;" id="img1"></a>
+                                            </div>
+                                            <div class="d">
+                                                <span id="span1">2.</span><a id="span2">Katelijne Verbruggen for Marie Claire Netherlands with Sara Van Der Hoek</a>
+                                            </div>
+                                    </div>
+                                    <div id="r">
+                                            <div class="t">
+                                                <a href="#"><img src="../Images/Women/nn3.png" alt="" style="margin-top: 0; width: 255px;" id="img1"></a>
+                                            </div>
+                                            <div class="d">
+                                                <span id="span1">3.</span><a id="span2">Harper’s Bazaar Singapore April 2019 Maggie Jablonski and Becca Horn by Georges Antoni</a>
+                                            </div>
+                                    </div>
+                                    <div id="r">
+                                            <div class="t">
+                                                <a href="#"><img src="../Images/Women/nn4.png" alt="" style="margin-top: 0; width: 255px;" id="img1"></a>
+                                            </div>
+                                            <div class="d">
+                                                <span id="span1">4.</span><a id="span2" style="margin-top: 20px;">MMSCENE PORTRAITS: Marin Barba Rosie by Mirko Fuhrherr</a>
+                                            </div>
+                                    </div>
+                                    <div id="r" style="margin-top: 30px;">
+                                            <div class="t">
+                                                <a href="#"><img src="../Images/Women/nn5.png" alt="" style="margin-top: 0; width: 255px;" id="img1"></a>
+                                            </div>
+                                            <div class="d">
+                                                <span id="span1">5.</span><a id="span2">Agata Pospieszynska for Harper's Bazaar Spain with Signe Veiteberg by Mirko Fuhrherr</a>
+                                            </div>
+                                    </div>
+                                    
+                            </div>
+                            
+                        </div>
+            </div>
+            <footer class="container-fluid">
+                    <div class="container">
+                            <div class="row">
+                                    <div class="col-md-4 ftrai">
+                                        <h2>PARADA</h2>
+                                
+                                    </div>
+                                    <div class="col-md-8 fphai"></div>
+                                    <li style="list-style-type: none; color: white;"><span id="p1">About us</span>&nbsp;&nbsp;&nbsp;&nbsp;&#124;&nbsp;&nbsp;&nbsp;<span id="p1">Copyright</span>&nbsp;&nbsp;&nbsp;&nbsp;&#124;&nbsp;&nbsp;&nbsp;&nbsp;<span id="p1">Term & Conditions</span>&nbsp;&nbsp;&nbsp;&nbsp;&#124;&nbsp;&nbsp;&nbsp;&nbsp;<span id="p1">Sitemap</span>&nbsp;&nbsp;&nbsp;&nbsp;&#124;&nbsp;&nbsp;&nbsp;&nbsp;<span id="p1">Contact us</span></li><br>
+                                    <p id="ab">460 Saint Catherine St. West, Suite 80 Montreal, (Quebec) H3B 1A7 Canada</p>
+                                    <p id="ab">Phone: (08) 3940 5071 | Email: lienhe@elleman.vn</p>
+                                    <p id="ab">Responsible for content management: Nguyen Thi Hong Hoa License of operation of general website No. 54 / GP-ICP, HCM on July 11, 2012</p>
+                                    <p id="ab"> Copyright by PRADA Man Vietnam © 2019</p>
+                                </div>
+                    </div>
+                </footer> 
+    </body>
+</html>

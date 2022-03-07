@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Women1</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                width: 100%;
+                height: auto;
+            }
+            #mau{
+                color: white;
+            }
+            #mau:hover{
+                background-color:#ff6666;
+            }
+            .main{
+                width: 72%;
+                margin: auto;
+            }
+            #h{
+                font-size: 40px;
+                text-align: center;
+                font-family:Georgia, 'Times New Roman', Times, serif;
+                padding: 30px 0;
+            }
+            #h:hover{
+                color: #ff8080;
+            }
+            #img{
+                width: 100%;
+                margin: 10px 0;
+            }
+            p{
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-size: 16px;
+            }
+            #sp{
+                color: #ff6666;
+            }
+            #sp:hover{
+                color: black;
+            }
+            footer{
+                background-color: #ff8080;
+                height: 400px;
+                margin-top: 20px;
+            }
+            .ftrai{
+                height: 200px;
+                margin-top: 70px;
+                text-align: center;
+            }
+            .ftrai h2{
+                color: white;
+                font-size: 60px;
+                margin: 0 45px;
+                border-bottom: 5px solid white;
+                
+            }
+            .ftrai h2:hover{
+                color: black;
+            }
+            .fphai{
+                margin-top: 80px;
+            }
+            #p1:hover{
+                color: #ffb3b3;
+            }
+            #ab{
+                font-family: Calibri;
+                font-size: 15px;
+            }
+        </style>
+        <script language="javascript">
+            function KiemTraDN() {
+                var tendangnhap = document.getElementById("txtTenDN").value;
+                var regular = /^[a-zA-Z][a-zA-Z0-9]{5,11}$/;
+                if (tendangnhap.length < 6) {
+                    document.getElementById("LoiDN").innerHTML = "Username 6 - 12 characters starting with the letter character";
+                }
+                if (regular.test(tendangnhap) == true) {
+                    document.getElementById("LoiDN").innerHTML = "";
+                    return true;
+                }
+                else {
+                    document.getElementById("LoiDN").innerHTML = "Invalid username";
+                    return false;
+                }
+
+
+            }
+        function KTMK() {
+            var mk = document.getElementById("txtpsw").value;
+            var v = /^[a-zA-Z0-9]{8,20}$/;
+
+            if (v.test(mk) == true) {
+                document.getElementById("Loimk").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("Loimk").innerHTML = "Enter 8 to 20 alphanumeric characters";
+                return false;
+            }
+        }
+        function KTMK1() {
+            var mk = document.getElementById("txtpsw").value;
+            var mk1 = document.getElementById("txtpsw2").value;
+            if (mk == mk1) {
+                document.getElementById("Loimk1").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("Loimk1").innerHTML = "Incorrect";
+                return false;
+            }
+        }
+        function KTHoTen() {
+            var mk = document.getElementById("txtHoTen").value;
+            var re = /([A-Z][a-z])+(\s[A-Z][a-z]+)*/;
+            if (re.test(mk)) {
+                document.getElementById("Loiten").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("Loiten").innerHTML = "Invalid name";
+                return false;
+            }
+        }
+        function KTSDT() {
+            var sdt = document.getElementById("txtSDT").value;
+            var reg = /[0-9]{9,15}/;
+            if (reg.test(sdt)) {
+                document.getElementById("Loisdt").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("Loisdt").innerHTML = "Phone numbers 9 to 15 digits";
+                return false;
+            }
+        }
+        function KTNS() {
+            var ns = new Date(document.getElementById("txtNgaySinh").value);
+            var hientai = new Date();
+            var d = hientai.getDate();
+            var m = hientai.getMonth();
+            var y = hientai.getFullYear();
+            var ymd = y + "-" + (m + 1) + "-" + d;
+            if (ns.length <= 0) {
+                document.getElementById("Loins").innerHTML = "Please enter your date of birth!";
+                return false;
+            }
+            if ((ns - hientai) >= 0) {
+                document.getElementById("Loins").innerHTML = "The date of birth must be before the current date";
+                return false
+            }
+            else {
+                document.getElementById("Loins").innerHTML = "";
+                return true;
+            }
+
+
+        }
+        function KTDC() {
+            var dc = document.getElementById("txtDiaChi").value;
+            var reg = /^[a-zA-Z0-9]+((,|-)[a-zA-Z0-9])+$/;
+            if (dc.length <= 0) {
+                document.getElementById("Loidc").innerHTML = "Please enter your address!"
+                return false;
+            }
+            else {
+                if (reg.test(dc)) {
+                    document.getElementById("Loidc").innerHTML = "";
+                    return true;
+                }
+                else {
+                    document.getElementById("Loidc").innerHTML = "Incorrect entry";
+                    return false;
+
+                }
+            }
+        }
+        function DangKy() {
+            if ((KTHoTen() == true) && (KiemTraDN() == true) && (KTMK() == true) && (KTMK1() == true) && (KTSDT() == true)&&(KTDC()==true)&&(KTNS()==true)) {
+                alert("Success");
+                $("#btnLogIn").show();
+                return true;
+            }
+            else {
+                alert("Invalid account information!");
+                return false;
+            }
+        }
+        function KTTenDN() {
+            var ten = document.getElementById("txtUserName").value;
+            var regular = /^[a-zA-Z0-9]+$/;
+            if (regular.test(ten)) {
+                document.getElementById("Loidn").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("Loidn").innerHTML = "Invalid username";
+                return false;
+            }
+        }
+        function KTPW() {
+            var mk = document.getElementById("txtPass").value;
+            var v = /^[a-zA-Z0-9]{8,20}$/;
+            if (v.test(mk)) {
+                document.getElementById("Loidn").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("Loidn").innerHTML = "Enter 8 to 20 alphanumeric characters";
+                return false;
+            }
+        }
+        function DangNhap() {
+            if (KTTenDN() == true && KTPW() == true) {
+                return true;
+            }
+            else {
+                document.getElementById("Loidn").innerHTML = "Username or password is incorrect";
+                return false;
+            }
+        }
+        $(document).ready(function () {
+            $("#btnLogIn").hide();
+
+
+
+        });
+        </script>
+        
+
+    </head>
+    <body>
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h2 class="modal-title" style="color:#333;text-align:center;">Registration</h2>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form">
+                            <div class="form-group">
+                                <p>UserName</p>
+                                <input type="text" id="txtTenDN" required class="form-control" onchange="KiemTraDN();" style="background:none;" /><span id="LoiDN" style="color:red">*</span>
+                            </div>
+                            <div class="form-group">
+                                <p>Password</p>
+                                <input type="password" id="txtpsw" required class="form-control" onchange="KTMK();" style="background:none;" /><span id="Loimk" style="color:red">*</span>
+                            </div>
+                            <div class="form-group">
+                                <p>Repeat password</p>
+                                <input type="password" id="txtpsw2" required class="form-control" onchange="KTMK1();" style="background:none;" /><span id="Loimk1" style="color:red">*</span>
+                            </div>
+                            <div class="form-group">
+                                <p>FullName</p>
+                                <input type="text" id="txtHoTen" required class="form-control" onchange="KTHoTen();" style="background:none;" /><span id="Loiten" style="color:red">*</span>
+                            </div>
+                            <div class="form-group">
+                                <p>Birthdate</p>
+                                <input type="date" id="txtNgaySinh" onblur="KTNS();" required class="form-control" style="background:none;" /><span id="Loins" style="color:red">*</span>
+                            </div>
+                            <div class="form-group">
+                                <p>Sex</p>
+                                <input type="radio" name="rad1" value="nam" checked="checked" />Male
+                                <input type="radio" name="rad1" value="nu" />Female<br />
+                            </div>
+                            <div class="form-group">
+                                <p>Phone number</p>
+                                <input type="text" id="txtSDT" required class="form-control" style="background:none;" /><span id="Loisdt" style="color:red">*</span>
+                            </div>
+                            <div class="form-group">
+                                <p>Address</p>
+                                <input type="text" id="txtDiaChi" required class="form-control" onblur="KTDC();" style="background:none;" /><span id="Loidc" style="color:red">*</span>
+                                <br /><br />
+                                <button type="button" class="btn btn-info btn-lg" onclick="DangKy();">SignUp</button>
+                                <button type="button" class="btn btn-info btn-lg" id="btnLogIn" data-toggle="modal" data-target="#LogIn">LogIn Now</button>
+                            </div>
+
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal fade" id="LogIn" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h2 class="modal-title" style="color:blue;text-align:center;">Log In</h2>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form">
+                            <div class="form-group">
+                                <p>UserName</p>
+                                <input type="text" id="txtUserName" required class="form-control" onblur="KTTenDN();" /><span></span>
+                            </div>
+                            <div class="form-group">
+                                <p>Password</p>
+                                <input type="password" id="txtPass" required class="form-control" onblur="KTPW();" /><span id="Loidn" style="color:red"></span>
+                            </div><br />
+                            <h3 style="text-align:center;"><a href="#">Forgot password?</a></h3>
+                            <button type="button" class="btn btn-info btn-lg" onclick="DangNhap();" style="width:100%;">Sign In</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                        <nav class="navbar navbar-fixed-top" style="background-color:#ff8080">
+                                <div class="container-fluid">
+                                    <div class="navbar-header">
+                                        <a class="navbar-brand" href="index.html" id="mau">PRADA</a>
+                                    </div>
+                                        <ul class="nav navbar-nav">
+                                            <li class="active"><a href="index.html" id="mau">Home</a></li>
+                                            <li><a href="women.html" id="mau">Women</a></li>
+                                            <li><a href="men.html"id="mau">Men</a></li>
+                                            <li><a href="contact.html"id="mau">Contact</a></li>
+                                        </ul>
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <li><a href="#" id="mau" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                                            <li><a href="#" id="mau" data-toggle="modal" data-target="#LogIn" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                                        </ul>
+                                    </div>
+                        </nav>
+                </div>
+            </div>
+        <div class="main">
+            <div class="row" style="margin-top: 40px;">
+                <div class="col-md-1">
+
+                </div>
+                <div class="col-md-10">
+                    <h1 id="h">8 REASONS TO RUN</h1>
+                    <img src="../Images/women/x1.jpg" alt="" id="img">
+                    <img src="../Images/women/x2.jpg" alt="" id="img">
+                    <img src="../Images/women/x3.jpg" alt="" id="img">
+                    <img src="../Images/women/x4.jpg" alt="" id="img">
+                    <img src="../Images/women/x5.jpg" alt="" id="img">
+                     
+                    <p style="text-align: center;">Obsessed with <span id="sp">these pants!</span> I have them in a couple colors they are my go to all time favorites!! The seamless ankle makes them really comfortable.</p>
+                    <img src="../Images/women/x6.jpg" alt="" id="img">
+                    <img src="../Images/women/x7.jpg" alt="" id="img">
+                    <img src="../Images/women/x8.jpg" alt="" id="img">
+                    <img src="../Images/women/x9.jpg" alt="" id="img">
+                    <img src="../Images/women/x10.jpg" alt="" id="img">
+                    <img src="../Images/women/x11.jpg" alt="" id="img">
+                    <img src="../Images/women/x12.jpg" alt="" id="img">
+                    <img src="../Images/women/x13.jpg" alt="" id="img">
+                    <img src="../Images/women/x14.jpg" alt="" id="img">
+                    <img src="../Images/women/x15.jpg" alt="" id="img">
+                    <p>Now that I finally have some more energy, I’ve been a lot better about regular exercise. I’m the type that’s overly cautious and I’ve researched what kind of exercise is ok during pregnancy and what to stay away from, so running has become one of my go to pregnancy workouts. Now my version of running while pregnant is probably about half the speed of normal runners 😉 and I value a pretty scenic route to make running more enjoyable!</p>
+                </div>  
+                <div class="col-md-1"></div>
+            </div>       
+        </div>
+        
+        </div>
+        <footer class="container-fluid">
+                <div class="container">
+                        <div class="row">
+                                <div class="col-md-4 ftrai">
+                                    <h2>PARADA</h2>
+                            
+                                </div>
+                                <div class="col-md-8 fphai"></div>
+                                <li style="list-style-type: none; color: white;"><span id="p1">About us</span>&nbsp;&nbsp;&nbsp;&nbsp;&#124;&nbsp;&nbsp;&nbsp;<span id="p1">Copyright</span>&nbsp;&nbsp;&nbsp;&nbsp;&#124;&nbsp;&nbsp;&nbsp;&nbsp;<span id="p1">Term & Conditions</span>&nbsp;&nbsp;&nbsp;&nbsp;&#124;&nbsp;&nbsp;&nbsp;&nbsp;<span id="p1">Sitemap</span>&nbsp;&nbsp;&nbsp;&nbsp;&#124;&nbsp;&nbsp;&nbsp;&nbsp;<span id="p1">Contact us</span></li><br>
+                                <p id="ab">460 Saint Catherine St. West, Suite 80 Montreal, (Quebec) H3B 1A7 Canada</p>
+                                <p id="ab">Phone: (08) 3940 5071 | Email: lienhe@elleman.vn</p>
+                                <p id="ab">Responsible for content management: Nguyen Thi Hong Hoa License of operation of general website No. 54 / GP-ICP, HCM on July 11, 2012</p>
+                                <p id="ab"> Copyright by PRADA Man Vietnam © 2019</p>
+                            </div>
+                </div>
+            </footer> 
+        
+    </body>
+</html>

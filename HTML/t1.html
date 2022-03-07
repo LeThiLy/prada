@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Women1</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                width: 100%;
+                height: auto;
+            }
+            #mau{
+                color: white;
+            }
+            #mau:hover{
+                background-color:#ff6666;
+            }
+            .main{
+                width: 72%;
+                margin: auto;
+            }
+            #h{
+                font-size: 40px;
+                text-align: center;
+                font-family:Georgia, 'Times New Roman', Times, serif;
+                padding: 30px 0;
+            }
+            #h:hover{
+                color: #ff8080;
+            }
+            #img{
+                width: 100%;
+                margin: 20px 0;
+            }
+            p{
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-size: 16px;
+            }
+            #sp{
+                color: #ff6666;
+            }
+            #sp:hover{
+                color: black;
+            }
+            footer{
+                background-color: #ff8080;
+                height: 400px;
+                margin-top: 20px;
+            }
+            .ftrai{
+                height: 200px;
+                margin-top: 70px;
+                text-align: center;
+            }
+            .ftrai h2{
+                color: white;
+                font-size: 60px;
+                margin: 0 45px;
+                border-bottom: 5px solid white;
+                
+            }
+            .ftrai h2:hover{
+                color: black;
+            }
+            .fphai{
+                margin-top: 80px;
+            }
+            #p1:hover{
+                color: #ffb3b3;
+            }
+            #ab{
+                font-family: Calibri;
+                font-size: 15px;
+            }
+        </style>
+        <script language="javascript">
+            function KiemTraDN() {
+                var tendangnhap = document.getElementById("txtTenDN").value;
+                var regular = /^[a-zA-Z][a-zA-Z0-9]{5,11}$/;
+                if (tendangnhap.length < 6) {
+                    document.getElementById("LoiDN").innerHTML = "Username 6 - 12 characters starting with the letter character";
+                }
+                if (regular.test(tendangnhap) == true) {
+                    document.getElementById("LoiDN").innerHTML = "";
+                    return true;
+                }
+                else {
+                    document.getElementById("LoiDN").innerHTML = "Invalid username";
+                    return false;
+                }
+
+
+            }
+        function KTMK() {
+            var mk = document.getElementById("txtpsw").value;
+            var v = /^[a-zA-Z0-9]{8,20}$/;
+
+            if (v.test(mk) == true) {
+                document.getElementById("Loimk").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("Loimk").innerHTML = "Enter 8 to 20 alphanumeric characters";
+                return false;
+            }
+        }
+        function KTMK1() {
+            var mk = document.getElementById("txtpsw").value;
+            var mk1 = document.getElementById("txtpsw2").value;
+            if (mk == mk1) {
+                document.getElementById("Loimk1").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("Loimk1").innerHTML = "Incorrect";
+                return false;
+            }
+        }
+        function KTHoTen() {
+            var mk = document.getElementById("txtHoTen").value;
+            var re = /([A-Z][a-z])+(\s[A-Z][a-z]+)*/;
+            if (re.test(mk)) {
+                document.getElementById("Loiten").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("Loiten").innerHTML = "Invalid name";
+                return false;
+            }
+        }
+        function KTSDT() {
+            var sdt = document.getElementById("txtSDT").value;
+            var reg = /[0-9]{9,15}/;
+            if (reg.test(sdt)) {
+                document.getElementById("Loisdt").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("Loisdt").innerHTML = "Phone numbers 9 to 15 digits";
+                return false;
+            }
+        }
+        function KTNS() {
+            var ns = new Date(document.getElementById("txtNgaySinh").value);
+            var hientai = new Date();
+            var d = hientai.getDate();
+            var m = hientai.getMonth();
+            var y = hientai.getFullYear();
+            var ymd = y + "-" + (m + 1) + "-" + d;
+            if (ns.length <= 0) {
+                document.getElementById("Loins").innerHTML = "Please enter your date of birth!";
+                return false;
+            }
+            if ((ns - hientai) >= 0) {
+                document.getElementById("Loins").innerHTML = "The date of birth must be before the current date";
+                return false
+            }
+            else {
+                document.getElementById("Loins").innerHTML = "";
+                return true;
+            }
+
+
+        }
+        function KTDC() {
+            var dc = document.getElementById("txtDiaChi").value;
+            var reg = /^[a-zA-Z0-9]+((,|-)[a-zA-Z0-9])+$/;
+            if (dc.length <= 0) {
+                document.getElementById("Loidc").innerHTML = "Please enter your address!"
+                return false;
+            }
+            else {
+                if (reg.test(dc)) {
+                    document.getElementById("Loidc").innerHTML = "";
+                    return true;
+                }
+                else {
+                    document.getElementById("Loidc").innerHTML = "Incorrect entry";
+                    return false;
+
+                }
+            }
+        }
+        function DangKy() {
+            if ((KTHoTen() == true) && (KiemTraDN() == true) && (KTMK() == true) && (KTMK1() == true) && (KTSDT() == true)&&(KTDC()==true)&&(KTNS()==true)) {
+                alert("Success");
+                $("#btnLogIn").show();
+                return true;
+            }
+            else {
+                alert("Invalid account information!");
+                return false;
+            }
+        }
+        function KTTenDN() {
+            var ten = document.getElementById("txtUserName").value;
+            var regular = /^[a-zA-Z0-9]+$/;
+            if (regular.test(ten)) {
+                document.getElementById("Loidn").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("Loidn").innerHTML = "Invalid username";
+                return false;
+            }
+        }
+        function KTPW() {
+            var mk = document.getElementById("txtPass").value;
+            var v = /^[a-zA-Z0-9]{8,20}$/;
+            if (v.test(mk)) {
+                document.getElementById("Loidn").innerHTML = "";
+                return true;
+            }
+            else {
+                document.getElementById("Loidn").innerHTML = "Enter 8 to 20 alphanumeric characters";
+                return false;
+            }
+        }
+        function DangNhap() {
+            if (KTTenDN() == true && KTPW() == true) {
+                return true;
+            }
+            else {
+                document.getElementById("Loidn").innerHTML = "Username or password is incorrect";
+                return false;
+            }
+        }
+        $(document).ready(function () {
+            $("#btnLogIn").hide();
+
+
+
+        });
+        </script>
+        
+
+    </head>
+    <body>
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h2 class="modal-title" style="color:#333;text-align:center;">Registration</h2>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form">
+                            <div class="form-group">
+                                <p>UserName</p>
+                                <input type="text" id="txtTenDN" required class="form-control" onchange="KiemTraDN();" style="background:none;" /><span id="LoiDN" style="color:red">*</span>
+                            </div>
+                            <div class="form-group">
+                                <p>Password</p>
+                                <input type="password" id="txtpsw" required class="form-control" onchange="KTMK();" style="background:none;" /><span id="Loimk" style="color:red">*</span>
+                            </div>
+                            <div class="form-group">
+                                <p>Repeat password</p>
+                                <input type="password" id="txtpsw2" required class="form-control" onchange="KTMK1();" style="background:none;" /><span id="Loimk1" style="color:red">*</span>
+                            </div>
+                            <div class="form-group">
+                                <p>FullName</p>
+                                <input type="text" id="txtHoTen" required class="form-control" onchange="KTHoTen();" style="background:none;" /><span id="Loiten" style="color:red">*</span>
+                            </div>
+                            <div class="form-group">
+                                <p>Birthdate</p>
+                                <input type="date" id="txtNgaySinh" onblur="KTNS();" required class="form-control" style="background:none;" /><span id="Loins" style="color:red">*</span>
+                            </div>
+                            <div class="form-group">
+                                <p>Sex</p>
+                                <input type="radio" name="rad1" value="nam" checked="checked" />Male
+                                <input type="radio" name="rad1" value="nu" />Female<br />
+                            </div>
+                            <div class="form-group">
+                                <p>Phone number</p>
+                                <input type="text" id="txtSDT" required class="form-control" style="background:none;" /><span id="Loisdt" style="color:red">*</span>
+                            </div>
+                            <div class="form-group">
+                                <p>Address</p>
+                                <input type="text" id="txtDiaChi" required class="form-control" onblur="KTDC();" style="background:none;" /><span id="Loidc" style="color:red">*</span>
+                                <br /><br />
+                                <button type="button" class="btn btn-info btn-lg" onclick="DangKy();">SignUp</button>
+                                <button type="button" class="btn btn-info btn-lg" id="btnLogIn" data-toggle="modal" data-target="#LogIn">LogIn Now</button>
+                            </div>
+
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal fade" id="LogIn" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h2 class="modal-title" style="color:blue;text-align:center;">Log In</h2>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form">
+                            <div class="form-group">
+                                <p>UserName</p>
+                                <input type="text" id="txtUserName" required class="form-control" onblur="KTTenDN();" /><span></span>
+                            </div>
+                            <div class="form-group">
+                                <p>Password</p>
+                                <input type="password" id="txtPass" required class="form-control" onblur="KTPW();" /><span id="Loidn" style="color:red"></span>
+                            </div><br />
+                            <h3 style="text-align:center;"><a href="#">Forgot password?</a></h3>
+                            <button type="button" class="btn btn-info btn-lg" onclick="DangNhap();" style="width:100%;">Sign In</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                        <nav class="navbar navbar-fixed-top" style="background-color:#ff8080">
+                                <div class="container-fluid">
+                                    <div class="navbar-header">
+                                        <a class="navbar-brand" href="index.html" id="mau">PRADA</a>
+                                    </div>
+                                        <ul class="nav navbar-nav">
+                                            <li class="active"><a href="index.html" id="mau">Home</a></li>
+                                            <li><a href="women.html" id="mau">Women</a></li>
+                                            <li><a href="men.html"id="mau">Men</a></li>
+                                            <li><a href="contact.html"id="mau">Contact</a></li>
+                                        </ul>
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <li><a href="#" id="mau" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                                            <li><a href="#" id="mau" data-toggle="modal" data-target="#LogIn" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                                        </ul>
+                                    </div>
+                        </nav>
+                </div>
+            </div>
+        <div class="main">
+            <div class="row" style="margin-top: 40px;">
+                <div class="col-md-12">
+                    <h1 id="h">Tackle Your Closet Spring Cleaning with These 10 Easy Tips to Make Your Closet Feel More Like a Boutique</h1>
+                    <img src="../Images/women1/w1.jpg" alt="" id="img">
+                    <p>I’m so excited to give you guys a BABY PEEK at my closet. We are still waiting on some details, so I’m probably a couple months from the full reveal but whenever my home office or house is disorganized, it’s impossible for me to focus or be productive. Now that we are in our new house, I’m trying to start off on the right foot and make sure we have a place for everything so it’s easier to keep tidy! My closet which is probably the hardest for me to keep organized, so I had an organizing service help me so I could make it the most functional. I wanted to share a few tips to start your closet spring cleaning off right!</p>
+                    <img src="../Images/women1/w11.jpeg" alt="" id="img"><br>
+                    <p>DETAILS :<span id="sp"> DRAWER DIVIDERS </span>(ON SALE 25% OFF – ALSO LOVE <span id="sp">THIS LINEN DIVIDER SET</span>)</p><br>
+                    <p>1. <span id="sp">Dividers</span>: You know you are an adult when The Container Store is one of your favorite places to shop 😂but having the right organizers makes such a huge difference! You Marie Kondo fans have noticed she uses <span id="sp">dividers </span> (also <span id="sp">love these</span>) and now that I’ve started using them there’s no going back. You can use any boxes you have around the house, but the uniform look feels so much more finished and it helps me what to keep my drawers organized. Same goes for these shelf <span id="sp">dividers – life-changing</span>!</p>
+                    <img src="../Images/women1/w111.jpeg" alt="" id="img">
+                    <p>2. Folding Tricks: Another trick I learned is to fold all your clothes and stack them all next to each other instead of on top of each other. You’ll be able to see everything in one glance, so you don’t have to go digging at the bottom of any stacks and destroying your piles in the process. It also helps you maximize your drawer space so you are using every corner more efficiently. (I’ve always struggled with pants but actually LOVE how they look folded up this way in the dresser!)</p>
+                    <p>3. Label It: Can I tell you how excited I was to get <span id="sp">a label maker</span>!! I opt for over-labeling. I like having it clear so I can’t forget and I just love the way they look! Anyone else?? I labeled all my drawers, the subsections of my drawers, and the storage bins on my top shelves. I knew it would help me be better about putting clothes away right where they go. And for bins that show that you need a bigger label for – <span id="sp">these gold label holders</span> are so cute! I used them in our laundry room and love them!</p><br>
+                    <img src="../Images/women1/w1111.jpeg" alt="" id="img">
+                    <p>DETAILS: <span id="sp"> BINS </span>(ON SALE 25% OFF)</p>
+                    <p>4. Think Vertically: Making the most of vertical space isn’t limited to drawers – take advantage of every shelf by storing some of your less-frequently used items in <span id="sp">bins or organizers</span> towards the type of your closet (these are the ones I used). Storage bins (25% off) can absolutely transform a closet and make it look really high-end (love these and these are 25% off). The bins are also an easy way to store some of the pieces that aren’t as pretty when displayed. I put the less frequently used items up high depending on the season. Then I also have some of these pretty boxes on lower shelves for belts and more day to day items that are easy to access without using a step ladder. (Also, using the same colored hanger makes everything look more unified!)</p>
+                    <img src="../Images/women1/w11111.jpeg" alt="" id="img">
+                    <p>DETAILS: <span id="sp">STORAGE BINS</span> (ON SALE 25% OFF)</p>
+                    <p>5. Keep Your Go-Tos Within Reach: To my earlier point, you want to keep that pieces that are in constant rotation somewhere convenient since you’ll reach for them so often. Keep your belts and day-to-day accessories in bins on lower shelves that are easily accessible and store some of your seasonal pieces like mittens and gloves in bins that you can stick on a high shelf until you need them.</p>
+                    <img src="../Images/women1/w111111.jpeg" alt="" id="img">
+                    <p>DETAILS: PURSE FILLERS | PURSE STAND ( ACTUALLY A PLATE STAND 😉</p>
+                    <p>6. Displaying > Decorating: If you’re anything like me, shoes and bags are some of the most beautiful things you own, so why not display them!? I am obsessed with these purse stands (this was actually a tip from the organizers that came in – use plate or book stands) that help keep your handbags from falling down and make it easier to display them, and having them all out in eyesight means they all get more use instead. (Has anyone else found a bag they loved buried and forgotten in their closet? I mean it’s a bit like Christmas, so not all bad, haha but I think it’s even better to have all of your bag options out in plain sight.) Also, I never used to stuff my bags and when we moved I noticed a lot of them were losing shape and kind of flimsy. I realized it’s 100% worth getting the bag stuffers to help them keep their shape and value. I love these.</p><br>
+                    <p>7. Keep your favorite boxes: Everybody has that special pair of shoes or bag that you are most proud of that comes in a box that still gets you excited every time you look at it – add some of that magic to your closet and display those pretty boxes as decoration! It also doubles as storage for those seasonal items you don’t need to access as often.</p>
+                    <img src="../Images/women1/w1111111.jpeg" alt="" id="img">
+                    <p>DETAILS: <span id="sp">LINEN JEWELRY TRAY</span> (ON SALE 25% OFF) | JEWELRY STORAGE KIT (ON SALE 25% OFF)</p>
+
+                </div>  
+            </div>       
+        </div>
+        
+        </div>
+        <footer class="container-fluid">
+                <div class="container">
+                        <div class="row">
+                                <div class="col-md-4 ftrai">
+                                    <h2>PARADA</h2>
+                            
+                                </div>
+                                <div class="col-md-8 fphai"></div>
+                                <li style="list-style-type: none; color: white;"><span id="p1">About us</span>&nbsp;&nbsp;&nbsp;&nbsp;&#124;&nbsp;&nbsp;&nbsp;<span id="p1">Copyright</span>&nbsp;&nbsp;&nbsp;&nbsp;&#124;&nbsp;&nbsp;&nbsp;&nbsp;<span id="p1">Term & Conditions</span>&nbsp;&nbsp;&nbsp;&nbsp;&#124;&nbsp;&nbsp;&nbsp;&nbsp;<span id="p1">Sitemap</span>&nbsp;&nbsp;&nbsp;&nbsp;&#124;&nbsp;&nbsp;&nbsp;&nbsp;<span id="p1">Contact us</span></li><br>
+                                <p id="ab">460 Saint Catherine St. West, Suite 80 Montreal, (Quebec) H3B 1A7 Canada</p>
+                                <p id="ab">Phone: (08) 3940 5071 | Email: lienhe@elleman.vn</p>
+                                <p id="ab">Responsible for content management: Nguyen Thi Hong Hoa License of operation of general website No. 54 / GP-ICP, HCM on July 11, 2012</p>
+                                <p id="ab"> Copyright by PRADA Man Vietnam © 2019</p>
+                            </div>
+                </div>
+            </footer> 
+        
+    </body>
+</html>

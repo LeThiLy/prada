@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+nav {
+    width: 100%;
+    line-height: 40px;
+    background-color: black;
+    text-align: center;
+    float: left;
+}
+nav ul li {
+    display: inline-block;
+    width: 165px;
+    
+    }
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+        }
+
+.header {
+    width: 100%;
+    text-align: center;
+}
+
+.header_icon {
+    width: 20%;
+    line-height: 160px;
+    float: left;
+}
+
+.header_icon a {
+        text-decoration: none;
+    }
+
+.icon:hover {
+    
+    opacity: 0.4;
+}
+
+.logo {
+    display: block;
+    height: 100px;
+    float: left;
+    padding: 40px 0 0 0;
+    margin-left: 220px;
+}
+
+.video {
+    width: 100%;
+    height: 930px;
+    margin: 0;
+    padding: 0;
+}
+
+.video .videos {
+        width: 100%;
+        height: 930px;
+        margin: 0;
+        padding: 0;
+    }
+
+main {
+    width: 100%;
+    height: auto;
+    margin-left: 106px;
+    padding-top: 30px;
+    margin-top: 30px;
+}
+
+h1 {
+    font: inherit;
+    font-size: 50px;
+    text-align: center;
+    color: #333;
+}
+
+h1:hover {
+        color: #a6a6a6;
+    }
+
+.women {
+    width: 1138px;
+    height: auto;
+}
+
+.women1 {
+    width: 1000px;
+    height: 350px;
+    border-bottom: 1px solid gray;
+}
+
+#w {
+    width: 260px;
+    height: 300px;
+    padding: 23px 20px;
+    float: left;
+}
+
+#w:hover {
+    opacity: 0.7;
+    }
+
+.women1 a {
+    font: inherit;
+    font-size: 38px;
+    float: left;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 0;
+}
+
+ .women1 a:hover {
+        color: #999999;
+    }
+#A{
+    font: inherit;
+    color: #333;
+    font-size: 44px;
+    margin-left: 250px;
+    text-decoration: none;
+    padding: 40px 30px;
+}
+#A:hover{
+    color: #999999;
+}
+.trai {
+    width: 32%;
+    float: left;
+}
+
+.phai {
+    width: 35%;
+    float: left;
+    margin: 20px 0;
+}
+#nut{
+    background-color: white; 
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-top: 10px;
+    font: inherit;
+   
+}
+#nut:hover{
+    background-color: black;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    color: azure;
+    padding: 7px 10px;
+    
+
+}
+
+footer {
+    width: 100%;
+    height: 400px;
+    background-color: black;
+}
+
+footer #footer1 {
+    font: inherit;
+    color: white;
+    font-size: 50px;
+    padding-top: 30px;
+    margin: 0;
+}
+
+footer #footer1 p {
+    font: inherit;
+    color: white;
+    font-size: 50px;
+    padding-top: 30px;
+    margin: 0;
+}
+
+footer #footer2 #txtEmail {
+    margin-top: 30px;
+    font: inherit;
+    font-size: 20px;
+    width: 500px;
+    height: 50px;
+    background-color: #660000;
+    border: 1px solid red;
+    color: white;
+}
+
+footer #footer2 a {
+    background-color: black;
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    margin-left: 30px;
+        
+}
+footer #footer2 a:hover{
+    color:antiquewhite;
+}
+#bia {
+    width: 100%;
+}
+
+footer #footer2 p {
+    font-family: inherit;
+    font-size: 20px;
+    margin-top: 70px;
+    color: gray;
+}
